@@ -72,15 +72,30 @@ public with sharing class ClassesObjectsMethods {
      * @return A list of boolean values indicating whether the string starts with 'Sales', ends with 'Force', or contains 'Awesome'.
      */
     public static List<Boolean> checkStringContent(String input) {
+        final String testStringSales = 'Sales';
+        final String testStringForce = 'Force';
+        final String testStringAwesome = 'Awesome';
+        
         // Initialize a list to store the results
         
-        // Check if the string starts with 'Sales'
+        List<Boolean> stringTests = new List<Boolean>();
         
+        // Check if the string starts with 'Sales'
+        Boolean testStartWithSales;
+        testStartWithSales = input.startsWith(testStringSales);
+        stringTests.add(testStartWithSales);
+
         // Check if the string ends with 'Force'
+        Boolean testEndsWithForce;
+        testEndsWithForce = input.endsWith(testStringForce);
+        stringTests.add(testEndsWithForce);
         
         // Check if the string contains 'Awesome'
-        
-        return null; // Replace null with the variable you used to store the result
+        Boolean testContainsAwesome;
+        testContainsAwesome = input.contains(testStringAwesome);
+        stringTests.add(testContainsAwesome);
+
+        return stringTests; // Replace null with the variable you used to store the result
     }
 
     /**
