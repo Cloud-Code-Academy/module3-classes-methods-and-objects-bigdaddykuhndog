@@ -107,15 +107,30 @@ public with sharing class ClassesObjectsMethods {
      */
     public static String removeDuplicateWords(String sentence) {
         // Split the sentence into words
+        List<string> wordsInSentence = sentence.split(' ');
+        System.debug('wordsInSentence = '+ wordsInSentence);
 
         // Create a set to store the unique words
+        Set<String> uniqueWordsInSentence = new Set<String>();
 
         // Add each word to the set
+        for(string word : wordsInSentence){
+            uniqueWordsInSentence.add(word);
+            //system.debug('uniqueWordsInSentence = ' + uniqueWordsInSentence);
+        }
 
         // Join the unique words back into a sentence
+        String stringToReturn = '';
+
+        for(String uniqueWord : uniqueWordsInSentence){
+            stringToReturn = stringToReturn + uniqueWord + ' ';
+            //system.debug('stringToReturn = ' + stringToReturn + '.');
+        }
+        stringToReturn = stringToReturn.trim();
+        //system.debug('Last stringToReturn = ' + stringToReturn + '.');
 
         // Return the sentence with unique words
-        return null; // Replace null with the variable you used to store the result
+        return stringToReturn; // Replace null with the variable you used to store the result
     }
 
     /**
