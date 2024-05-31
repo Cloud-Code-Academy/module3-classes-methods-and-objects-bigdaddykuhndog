@@ -108,7 +108,6 @@ public with sharing class ClassesObjectsMethods {
     public static String removeDuplicateWords(String sentence) {
         // Split the sentence into words
         List<string> wordsInSentence = sentence.split(' ');
-        System.debug('wordsInSentence = '+ wordsInSentence);
 
         // Create a set to store the unique words
         Set<String> uniqueWordsInSentence = new Set<String>();
@@ -116,7 +115,6 @@ public with sharing class ClassesObjectsMethods {
         // Add each word to the set
         for(string word : wordsInSentence){
             uniqueWordsInSentence.add(word);
-            //system.debug('uniqueWordsInSentence = ' + uniqueWordsInSentence);
         }
 
         // Join the unique words back into a sentence
@@ -124,10 +122,9 @@ public with sharing class ClassesObjectsMethods {
 
         for(String uniqueWord : uniqueWordsInSentence){
             stringToReturn = stringToReturn + uniqueWord + ' ';
-            //system.debug('stringToReturn = ' + stringToReturn + '.');
         }
+        
         stringToReturn = stringToReturn.trim();
-        //system.debug('Last stringToReturn = ' + stringToReturn + '.');
 
         // Return the sentence with unique words
         return stringToReturn; // Replace null with the variable you used to store the result
@@ -143,16 +140,24 @@ public with sharing class ClassesObjectsMethods {
      */
     public static Integer countVowels(String str) {
         // Initialize the result Integer
+        Integer numberOfVowels = 0;
+        List<string> lettersInWord = new List<String>();
 
-        /*
-        for () {
+        for (Integer i = 0; i < str.length(); i++) {
             // get individual characters from the string - hint use substring or split
-            // check if the character is a vowel
-            // if it is a vowel, increment the result Integer
+            lettersInWord.add(str.substring(i, i+1));            
         }
-        */
+        
+        for (String letter : lettersInWord) {
+        // check if the character is a vowel
+            if (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u') {
+            // if it is a vowel, increment the result Integer
+            numberOfVowels += 1;
+            }    
+        }
+               
 
-        return null; // Replace null with the variable you used to store the result
+        return numberOfVowels; // Replace null with the variable you used to store the result
     }
 
     /**
