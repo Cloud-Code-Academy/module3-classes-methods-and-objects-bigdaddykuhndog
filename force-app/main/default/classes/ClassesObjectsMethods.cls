@@ -172,16 +172,21 @@ public with sharing class ClassesObjectsMethods {
         List<String> scientistNames = new List<String>{'Tim Berners-Lee', 'Alan Turing', 'Grace Hopper', 'Donald Knuth', 'Guido van Rossum', 'Ken Thompson', 'Stephen Hawking'};
 
         // The variable to store the concatenated string
+        String removeNoGNames = '';
 
         // Loop through the list of scientists' names
-
+        for(string scientist : scientistNames){
             // If the name doesn't contain the letter 'G', skip this iteration
-
+            if (scientist.containsIgnoreCase('g')) {
+                removeNoGNames = removeNoGNames + scientist + ',';
+            }
+        }
             // Add the name to the result string, followed by a comma
 
         // Remove the last comma from the result string
+        removeNoGNames = removeNoGNames.removeEnd(',');
 
-        return null; // Replace null with the variable you used to store the result
+        return removeNoGNames; // Replace null with the variable you used to store the result
     }
 
     /**
