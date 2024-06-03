@@ -227,7 +227,7 @@ public with sharing class ClassesObjectsMethods {
         if (randomNumber < 50){
             randomNumber += 50;
         }
-        
+
         // Return the random integer
         return randomNumber; // Replace null with the variable you used to store the result
     }
@@ -240,11 +240,13 @@ public with sharing class ClassesObjectsMethods {
      */
     public static String getCurrentDate() {
         // Get the todays date
-
+        date todaysDate = date.today();
+        
         // Format the current date
-
+        String formatedDate = todaysDate.format();
+        
         // Return the result
-        return null; // Replace null with the variable you used to store the result
+        return formatedDate; // Replace null with the variable you used to store the result
     }
 
     /**
