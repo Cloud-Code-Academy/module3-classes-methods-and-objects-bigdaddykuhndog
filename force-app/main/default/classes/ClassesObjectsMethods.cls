@@ -310,19 +310,23 @@ public with sharing class ClassesObjectsMethods {
      */
     public class Book {
         // Declare three public instance variables - title, author, pages
-        // title
-        // author
-        // pages
+        public String title = '';
+        public String author = '';
+        public Integer pages = 0;
     
         // Book constructor to initialize the title and author
-        public Book() {
+        public Book(string title, string author) {
             // Initialize the title and author
+            this.title = title;
+            this.author = author;
         }
     
         // Method that returns the details of the book
         public String getBookDetails() {
             // return A string containing the details of the book in the format "Title: <title>, Author: <author>"
-            return null; // Replace null with the variable you used to store the result
+            String returnString = '';
+            returnString = 'Title: ' + title + ', Author: ' + author;
+            return returnString; // Replace null with the variable you used to store the result
         }
     }
     
