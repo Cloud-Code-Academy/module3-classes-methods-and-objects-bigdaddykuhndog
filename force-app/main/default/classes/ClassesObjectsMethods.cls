@@ -310,9 +310,18 @@ public with sharing class ClassesObjectsMethods {
      */
     public class Book {
         // Declare three public instance variables - title, author, pages
-        public String title = '';
-        public String author = '';
-        public Integer pages = 0;
+        public String title {
+            get { return title;}
+            set { title = value;}
+        }
+        public String author {
+            get { return author;}
+            set { author = value;}
+        }
+        public Integer pages {
+            get { return pages;}
+            set { pages = value;}
+        }
     
         // Book constructor to initialize the title and author
         public Book(string title, string author) {
@@ -359,8 +368,10 @@ public with sharing class ClassesObjectsMethods {
      */
     public static List<Book> generateBookList(Book myBook1) {
         // Create a list of books
-
+        List<Book> bookList = new List<Book>();
+        
         // Update the title and author of myBook1
+        //myBook1.
 
         // Update the pages for myBook1 to 352
 
