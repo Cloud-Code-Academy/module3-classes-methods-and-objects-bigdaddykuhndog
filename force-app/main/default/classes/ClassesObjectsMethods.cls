@@ -371,17 +371,25 @@ public with sharing class ClassesObjectsMethods {
         List<Book> bookList = new List<Book>();
         
         // Update the title and author of myBook1
-        //myBook1.
+        myBook1.title = 'Harry Potter and the Chamber of Secrets';
+        myBook1.author = 'J.K. Rowling';
 
         // Update the pages for myBook1 to 352
+        myBook1.pages = 352;
+
+        bookList.add(myBook1);
+        //System.debug('size of bookList = ' + bookList.size());
 
         // Create a new Book object with title "A Brief History of Time" and author "Stephen Hawking"
-
+        Book physicsBook = new Book('A Brief History of Time', 'Stephen Hawking');
+    
         // Update the pages for A Brief History of Time to 256
+        physicsBook.pages = 256;
 
         // Add the book to the list
+        bookList.add(physicsBook);
         
-        return null; // Replace null with the variable you used to store the result      
+        return bookList; // Replace null with the variable you used to store the result      
     }
 
 
