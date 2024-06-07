@@ -310,6 +310,7 @@ public with sharing class ClassesObjectsMethods {
      */
     public class Book {
         // Declare three public instance variables - title, author, pages
+        
         public String title {
             get { return title;}
             set { title = value;}
@@ -403,16 +404,9 @@ public with sharing class ClassesObjectsMethods {
     public class Person {
         // Declare private two instance variables - (TEXT) name and (Number) age
         private String name ;
-        // {
-        //     get {return name;}
-        //     set {name = value;}
-        // }
+
         private Integer age;
-        // {
-        //     get {return age;}
-        //     set {age = value;}
-        // }
-        
+                
         // Constructor to initialize the name and age
         public Person (String name, Integer age){
             this.name = name;
@@ -422,9 +416,11 @@ public with sharing class ClassesObjectsMethods {
         // Method introduceYourself that returns the details of the person        
         // Return a string in the format "Hello, my name is <name> and I am <age> years old."
         // For example, introduceYourself() should return a string like "Hello, my name is John Doe and I am 28 years old."
-        
+
         public string introduceYourself(){
+            
             String returnString = 'Hello, my name is ' + name + ' and I am ' + age + ' years old.';
+
             return returnString;
         }
 
@@ -459,15 +455,23 @@ public with sharing class ClassesObjectsMethods {
     public static List<String> personDetails() {
         List<String> results = new List<String>();
         // Create a new instance of Person class
+        Person imAPerson = new Person('',0);
+
         // Name the person 'John Doe' and set the age to 28
+        imAPerson.setName('John Doe');
+        imAPerson.setAge(28);
 
         // Add the details of the person using the introduceYourself method
+        //String introduceYourselfString = imAPerson.introduceYourself();
+        results.add(imAPerson.introduceYourself());
 
         // Get the name of the person using the getter method and add it to the list
+        results.add(imAPerson.getName());
 
         // Get the age of the person using the getter method and add it to the list
+        results.add(imAPerson.getAge().format());
         
-        return null; // Replace null with the variable you used to store the result
+        return results; // Replace null with the variable you used to store the result
     }
 
     /**
